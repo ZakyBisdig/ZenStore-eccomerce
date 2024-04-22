@@ -3,14 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Store</title>
+    <style>
+        body {
+            background-color: #102542;
+            color: greenyellow;
+            text-align: left;
+            margin: 0; /* Menghilangkan margin default */
+            padding: 0; /* Menghilangkan padding default */
+        }
+        body a:hover {
+            color: #F87060;
+        }
+        nav {
+            background-color: #102542; /* Warna latar belakang menu */
+            padding: 10px 0; /* Padding atas dan bawah */
+            display: flex; /* Menggunakan display flex untuk penempatan logo dan menu */
+            justify-content: center; /* Mengatur penempatan secara horizontal ke tengah */
+            align-items: center; /* Mengatur penempatan secara vertikal ke tengah */
+        }
+        nav ul {
+            list-style-type: none; /* Menghilangkan bullet pada daftar */
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Mengatur teks menu menjadi di tengah */
+        }
+        nav ul li {
+            display: inline; /* Mengatur item menu menjadi inline */
+            margin-right: 20px; /* Jarak antara item menu */
+        }
+        nav ul li a {
+            color: white; /* Warna teks menu */
+            text-decoration: none; /* Menghilangkan dekorasi tautan */
+            font-weight: bold; /* Menjadikan teks tebal */
+        }
+        nav ul li a:hover {
+            color: #F87060
+        }
+        a.wordpress-link {
+            color: white;
+        }
+        header {
+            background-color: #102542; /* Warna latar belakang header */
+            padding: 10px 0; /* Padding atas dan bawah */
+            position: relative;
+        }
+        header img {
+            display: block; /* Membuat gambar menjadi blok agar dapat diatur margin otomatis */
+            margin: 0 auto; /* Mengatur margin otomatis untuk penempatan di tengah */
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Kategori</a></li>
+            <li><img src="zenstore_image/zenstore_logo2.png" alt="Logo ZenStore" width="100" height="100"></li>
+            <li><a href="#">Keranjang</a></li>
+        </ul>
+    </nav>
+    <h1 style="color: #F87060; text-align: center;">Welcome to ZenStore</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <p>Category: {{ product.category }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <a href="{% url 'product_detail' product_id=product.id %}" class="wordpress-link">View Details</a>
+                <!-- Tambahkan detail lainnya sesuai kebutuhan -->
+            </li>
+        {% endfor %}
+    </ul>
+    <h2 style="text-align: center; color: #F87060">Alamat Tokoh</h2>
+    <ul>
+        <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.248113082938!2d119.43502166159666!3d-5.1739161512510465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee291f084750b%3A0xa4f4abfdff834d4b!2sUniversitas%20Negeri%20Makassar!5e0!3m2!1sid!2sid!4v1713709153170!5m2!1sid!2sid" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="https://zaky.bisdiglab.com" class="wordpress-link">wordpress zaky</a>
+    </ul>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenStore</title>
-    <link rel="shortcut icon" href="zenstore_image/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="zenstore_image/favicon.ico" type="image/x-icon">
     <style>
         body {
             background-color: #102542;
             margin: 0;
             padding: 0;
+        }
+        audio {
+            display: none;
         }
         img.logo {
             width: 100px;
@@ -26,11 +126,6 @@
             text-align: center;
             margin: 0 auto;
             padding: 0;
-            transition: all 0.5s ease-in-out;
-        }
-        h1.judul:hover {
-            color: white;
-            text-shadow: 0px 0px 2px white;
         }
         p.slogan {
             color: white;
@@ -38,11 +133,6 @@
             text-align: center;
             margin: 0 auto;
             padding: 0;
-            transition: all 0.5s ease-in-out;
-        }
-        p.slogan:hover {
-            color: #F87060;
-            text-shadow: 0px 0px 2px #F87060;
         }
         h2.produk {
             color: #F87060;
@@ -92,15 +182,13 @@
             padding: 0;
             padding-top: 20px;
         }
-        audio.home {
-            display: block;
-            margin: 0 auto;
-            padding: 0;
-            padding-top: 20px;
-        }
     </style>
 </head>
 <body>
+    <audio controls autoplay loop style="display: none;">
+        <source src="zenstore_audio/song1.mp3" type="audio/mpeg">
+    </audio>
+    
     <img src="zenstore_image/zenstore_logo2.png" alt="Logo ZenStore" class="logo">
     <h1 class="judul">Welcome To ZenStore</h1>
     <p class="slogan">Temukan Ketenangan dalam Berbelanja di ZenStore!</p>
@@ -126,10 +214,6 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1P5BSm_oFJg?si=PvE8hmD45I0Y8MKL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe>
     </div>
 
-    <audio controls autoplay loop class="home">
-        <source src="zenstore_audio/song1.mp3" type="audio/mpeg">
-    </audio>
-
     <h2 class="aboutme">About Me</h2>
     <p class="aboutme">Nama saya Muh Zaky Ramadhan Chahyadi, seorang mahasiswa bisnis digital yang bercita-cita menjadi bagian dari industri digital yang berkembang pesat. Tujuan saya adalah memperoleh pengetahuan dan keterampilan dalam tren, teknologi, dan praktik terbaik. Saya bertujuan untuk menciptakan solusi inovatif, dengan fokus pada desain digital, pengalaman pengguna, dan pengembangan perangkat lunak. Saya mencari lingkungan kerja yang inovatif dan kolaboratif serta peluang untuk berkontribusi dalam mengubah cara kita bekerja dan hidup melalui inovasi digital.</p>
     
@@ -137,5 +221,18 @@
     <b>Fakultas:</b> Ekonomi & Bisnis<br>
     <b>Jurusan:</b> Bisnis Digital</p>
 
+    <script>
+        // Menghentikan audio web saat video dimainkan
+        document.getElementById('youtubePlayer').addEventListener('play', function() {
+            document.getElementById('webAudio').pause();
+        });
+        // Memulai kembali audio web saat video dijeda atau selesai
+        document.getElementById('youtubePlayer').addEventListener('pause', function() {
+            document.getElementById('webAudio').play();
+        });
+        document.getElementById('youtubePlayer').addEventListener('ended', function() {
+            document.getElementById('webAudio').play();
+        });
+    </script>
 </body>
 </html>
