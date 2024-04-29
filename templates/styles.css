@@ -20,8 +20,10 @@ body {
 
 /* AWAL WELCOME TEXT */
 .container-background1 {
-    background-image: url(https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(https://i.ibb.co/PQhRPXs/a-minimalist-zen-garden-in-a-futuristic-setting-with-holographic-projections-of-rocks-and-trees-ge-9.png);
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     margin: 0 auto;
     padding: 200px;
@@ -177,7 +179,7 @@ p.list-produk {
     display: flex;
     width: 86%;
     margin: 0 auto;
-    padding: 20px 0 0 0 ;
+    padding: 0 0 0 0 ;
 }
 .slider-wrapper {
 	position: relative;
