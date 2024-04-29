@@ -1,11 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- AWAL HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }}</title>
-</head>
+    <link rel="shortcut icon" href="zenstore_image/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="zenstore_image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="templates/style_product_list.css">
+
+    <style> /* AWAL STYLE */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin-top: 80px;
+    min-height: 100vh;
+    background: #102542;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #F87060;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100px;
+}
+
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+.navbar a:hover::before {
+    width: 100%;
+}
+.navbar a:hover {
+    color: #33a3e8;
+}
+
+img.logo {
+    width: 100px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+h1.judul {
+    color: #F87060;
+    text-shadow: 0px 0px 2px #F87060;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+h1.judul:hover {
+    color: white;
+    text-shadow: 0px 0px 2px white;
+}
+p.slogan {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    clear:left;
+    height:25px;
+    margin-top:0;
+    margin-right:5px;
+    margin-bottom:30px;
+    margin-left:5px;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+p.slogan:hover {
+    color: #F87060;
+    text-shadow: 0px 0px 2px #F87060;
+}
+h2.produk {
+    color: #F87060;
+}
+h2.alamat {
+    color: #F87060;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 30px;
+}
+h2.aboutme {
+    color: #F87060;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10;
+    margin-bottom: 0;
+    padding: 0;
+}
+p.produk {
+    color: #102542;
+}
+p.aboutme {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    text-align: justify;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 400px;
+    padding-right: 400px;
+}
+a.produk {
+    color: #33a3e8;
+}
+body a:hover {
+    color: #F87060;
+}
+iframe.alamat {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+iframe.youtube {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+}
+audio.home {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+}
+
+ul.produk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 0; 
+    list-style: none; 
+}
+
+li.produk {
+    width: calc(25% - 20px); 
+    border-radius: 12px;
+    margin-bottom: 20px; 
+    background-color: #fff; 
+    padding: 20px;
+    box-sizing: border-box; 
+    margin: 10px 5px;
+    text-align: center;
+}
+
+h2.produk,
+p.produk,
+a.produk {
+    text-align: center;
+}
+
+
+
+/* Styles for product listing */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom dengan lebar yang sama */
+    gap: 20px; /* Mengatur jarak antar produk */
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 12px;
+    color: #F87060;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* AWAL CONTAINER */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+/* AKHIR CONTAINER */
+
+
+/* AWAL CAROUSEL */
+.slider-wrapper {
+	position: relative;
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+/* AKHIR CAROUSEL */
+
+
+/* AWAL FOOTER */
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul.footer{
+	list-style: none;
+}
+.footer{
+	background-color: #F87060;
+    padding: 10px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: white;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+/* AKHIR FOOTER */
+
+    </style> <!-- AKHIR STYLE -->
+</head> <!-- AKHIR HEAD -->
+
 <body>
+
+    <!-- AWAL NAVBAR -->
+    <header class="header">
+        <a href="#" class="logo">ZenStore</a>
+
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Kategori</a>
+            <a href="#">Pesanan</a>
+            <a href="#">About</a>
+            <a href="#">Keranjang</a>
+        </nav>
+    </header>
+    <!-- AKHIR NAVBAR -->
+
+
     <h1>{{ product.name }}</h1>
     <p>Category: {{ product.category }}</p>
     <p>Price: ${{ product.price }}</p>
@@ -13,5 +383,53 @@
     <p>Description: {{ product.description }}</p>
     <a href="{% url 'order_create' %}?product_id={{ product.id }}">Order Now</a>
     <!-- Tambahkan detail lainnya sesuai kebutuhan -->
+
+
+    <!-- AWAL FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul class="footer">
+                        <li><a href="#">aAbout ZenStore</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul class="footer">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">pengantaran</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">status pesanana</a></li>
+                        <li><a href="#">pilihan pembayaran</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul class="footer">
+                        <li><a href="#">fashion</a></li>
+                        <li><a href="#">beauty</a></li>
+                        <li><a href="#">tech</a></li>
+                        <li><a href="#">dekorasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+    <!-- AKHIR FOOTER -->    
+
 </body>
 </html>

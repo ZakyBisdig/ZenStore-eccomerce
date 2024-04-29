@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin-top: 80px;
+    min-height: 100vh;
+    background: #102542;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* AWAL WELCOME TEXT */
+.container-background1 {
+    background-image: url(https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 200px;
+    overflow: hidden;
+}
+.container-background2 {
+    display: grid;
+    margin: 0 auto;
+    width: 60%;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 30px;
+}
+/* AKHIR WELCOME TEXT */
+
+
+
+/* AWAL HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #F87060;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+.navbar a:hover::before {
+    width: 100%;
+}
+.navbar a:hover {
+    color: #33a3e8;
+}
+/* AKHIR HEADER */
+
+
+
+/* AWAL WELCOME TEXT */
+p.welcome {
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right:5px;
+    margin-left:5px;
+    transition: all 0.5s ease-in-out;
+}
+p.welcome:hover {
+    color: #F87060;
+    text-shadow: 0px 0px 2px #F87060;
+}
+/* AKHIR WELCOMTE TEXT /*
+
+
+/* AWAL LIST PRODUK 1*/
+h1.list-produk {
+    color: #F87060;
+}
+ul.list-produk {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    list-style: none;
+}
+li.list-produk {
+    background-color: #fff;
+    border-radius: 12px;
+    color: #F87060;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2.list-produk {
+    color: #F87060;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 20px;
+}
+p.list-produk {
+    color: #102542;
+    text-align: center;
+    font-size: 16px;
+}
+/* AKHIR LIST PRODUK 1*/
+
+
+
+/* AWAL LIST PRODUk 2 */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom dengan lebar yang sama */
+    gap: 20px; /* Mengatur jarak antar produk */
+}
+.product {
+    background-color: #fff;
+    border-radius: 12px;
+    color: #F87060;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* AKHIR LIST PRODUCT */
+
+/* AWAL CONTAINER */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    overflow: hidden;
+}
+/* AKHIR CONTAINER */
+
+
+/* AWAL CAROUSEL */
+.container-carousel {
+    display: flex;
+    width: 86%;
+    margin: 0 auto;
+    padding: 20px 0 0 0 ;
+}
+.slider-wrapper {
+	position: relative;
+	max-width: 50rem;
+	margin: 0 auto;
+}
+.slider-wrapper-2 {
+	position: relative;
+	max-width: 50rem;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+/* AKHIR CAROUSEL */
+
+
+/* AWAL BUTTON */
+.button-product {
+    display: block;
+    margin: 15px auto;
+    font-weight: bold;
+    background: #F87060;
+    width: 160px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+.button-product:hover, .button-product:focus, .button-product:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    color: white;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+/* AKHIR BUTTON */
+
+
+
+/* AWAL ANIMASI TEXT */
+.animasi-text1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 60px;
+    background: linear-gradient(45deg, white, #33a3e8, #F87060, #33a3e8, white, #F87060); /* Warna gradient */
+    background-size: 400% 400%; /* Ukuran gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animateGradient 8s linear infinite; /* Animasi berubah warna */
+}
+@keyframes animateGradient {
+    0%, 100% {
+        background-position: 0% 50%; /* Warna gradient awal dan akhir */
+    }
+    50% {
+        background-position: 100% 50%; /* Warna gradient pada pertengahan */
+    }
+}
+/* AKHIR ANIMASI TEXT */
+
+
+
+/* AWAL MENU KATEGORI PRODUK */
+.container-kategori-1 {
+    display: grid;
+    width: 86%;
+    padding: 10px 0 0 0;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+}
+.container-kategori-2 {
+    display: grid;
+    width: 86%;
+    grid-template-columns: repeat(10, 1fr);
+    justify-items: center;
+    align-items: center;
+    justify-content: baseline;
+    align-content: baseline;
+    grid-row-gap: 1px;
+    grid-column-gap: 10px;
+    padding: 0 30px 10px 30px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
+img.menu-kategori {
+    display: flex;
+    width: 80px;
+    margin: 0 auto;
+}
+h1.menu-kategori {
+    color: #102542;
+    font-size: 14px;
+    text-align: center;
+}
+.item-1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-3 {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-4 {
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-5 {
+    grid-row: 1 / 2;
+    grid-column: 5 / 6;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-6 {
+    grid-row: 1 / 2;
+    grid-column: 6 / 7;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-7 {
+    grid-row: 1 / 2;
+    grid-column: 7 / 8;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-8 {
+    grid-row: 1 / 2;
+    grid-column: 8 / 9;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-9 {
+    grid-row: 1 / 2;
+    grid-column: 9 / 10;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+.item-10 {
+    grid-row: 1 / 2;
+    grid-column: 10 / 11;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+/* AKHIR MENU KATEGORI PRODUK */
+
+
+
+/* AWAL ALAMAT */
+h1.alamat {
+    color: #F87060;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 30px;
+}
+iframe.alamat {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+/* AKHIR ALAMAT */
+
+
+
+/* AWAL YOUTUBE */
+iframe.youtube {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+}
+/* AKHIR YOUTUBE */
+
+
+
+/* AWAL AUDIO */
+audio.home {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+}
+/* AKHIR AUDIO */
+
+
+
+/* AWAL FOOTER */
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul.footer{
+	list-style: none;
+}
+.footer{
+	background-color: #F87060;
+    padding: 10px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #33a3e8;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: white;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+/* AKHIR FOOTER */

@@ -236,3 +236,155 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenStore</title>
+    <link rel="shortcut icon" href="zenstore_image/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="zenstore_image/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #102542;
+            margin: 0;
+            padding: 0;
+        }
+        img.logo {
+            width: 100px;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+        h1.judul {
+            color: #F87060;
+            text-shadow: 0px 0px 2px #F87060;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        h1.judul:hover {
+            color: white;
+            text-shadow: 0px 0px 2px white;
+        }
+        p.slogan {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        p.slogan:hover {
+            color: #F87060;
+            text-shadow: 0px 0px 2px #F87060;
+        }
+        h2.produk {
+            color: #F87060;
+        }
+        h2.alamat {
+            color: #F87060;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 30px;
+        }
+        h2.aboutme {
+            color: #F87060;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 10;
+            margin-bottom: 0;
+            padding: 0;
+        }
+        p.produk {
+            color: white;
+        }
+        p.aboutme {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-align: justify;
+            margin: 0 auto;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 400px;
+            padding-right: 400px;
+        }
+        a.produk {
+            color: #33a3e8;
+        }
+        body a:hover {
+            color: #F87060;
+        }
+        iframe.alamat {
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+        }
+        iframe.youtube {
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 20px;
+        }
+        audio.home {
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="zenstore_image/zenstore_logo2.png" alt="Logo ZenStore" class="logo">
+    <h1 class="judul">Welcome To ZenStore</h1>
+    <p class="slogan">Temukan Ketenangan dalam Berbelanja di ZenStore!</p>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <h2 class="produk">{{ product.name }}</h2>
+                <p class="produk">Category: {{ product.category }}</p>
+                <p class="produk">Price: ${{ product.price }}</p>
+                <a href="{% url 'product_detail' product_id=product.id %}" class="produk">View Details</a>
+                <!-- Tambahkan detail lainnya sesuai kebutuhan -->
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2 class="alamat">Kantor Pusat ZenStore</h2>
+    <div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15894.248113082938!2d119.43502166159666!3d-5.1739161512510465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee291f084750b%3A0xa4f4abfdff834d4b!2sUniversitas%20Negeri%20Makassar!5e0!3m2!1sid!2sid!4v1713709153170!5m2!1sid!2sid" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="alamat"></iframe>
+    </div>
+
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1P5BSm_oFJg?si=PvE8hmD45I0Y8MKL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe>
+    </div>
+
+    <audio controls autoplay loop class="home">
+        <source src="zenstore_audio/song1.mp3" type="audio/mpeg">
+    </audio>
+
+    <h2 class="aboutme">About Me</h2>
+    <p class="aboutme">Nama saya Muh Zaky Ramadhan Chahyadi, seorang mahasiswa bisnis digital yang bercita-cita menjadi bagian dari industri digital yang berkembang pesat. Tujuan saya adalah memperoleh pengetahuan dan keterampilan dalam tren, teknologi, dan praktik terbaik. Saya bertujuan untuk menciptakan solusi inovatif, dengan fokus pada desain digital, pengalaman pengguna, dan pengembangan perangkat lunak. Saya mencari lingkungan kerja yang inovatif dan kolaboratif serta peluang untuk berkontribusi dalam mengubah cara kita bekerja dan hidup melalui inovasi digital.</p>
+    
+    <p class="aboutme" style="margin-top: 10px; text-align: center;"><b>Universitas:</b> Universitas Negeri Makassar<br>
+    <b>Fakultas:</b> Ekonomi & Bisnis<br>
+    <b>Jurusan:</b> Bisnis Digital</p>
+
+</body>
+</html>
