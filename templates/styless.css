@@ -100,6 +100,9 @@ p.welcome:hover {
     text-decoration: none;
     font-weight: 700;
 }
+img.logo-navbar {
+    width: 50px;
+}
 .navbar a {
     position: relative;
     font-size: 18px;
@@ -166,6 +169,7 @@ p.list-produk {
 img.list-produk {
     width: 60%;
     text-align: center;
+    border-radius: 12px;
 }
 /* AKHIR LIST PRODUK 1*/
 
@@ -195,6 +199,7 @@ img.list-produk {
     overflow: hidden;
 }
 /* AKHIR CONTAINER */
+
 
 
 /* AWAL CAROUSEL */
@@ -260,6 +265,7 @@ img.list-produk {
 	opacity: 1;
 }
 /* AKHIR CAROUSEL */
+
 
 
 /* AWAL BUTTON */
@@ -521,4 +527,5 @@ ul.footer{
 }
 }
 /* AKHIR FOOTER */
+
 
